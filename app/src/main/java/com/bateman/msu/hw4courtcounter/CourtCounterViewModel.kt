@@ -40,8 +40,5 @@ class CourtCounterViewModel: ViewModel() {
         scoreTeamA = 0
         scoreTeamB = 0
     }
-    fun scoreForTeamA(){
-        val scoreTeamA = scoreTeamA
-    }
 
 }
