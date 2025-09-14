@@ -1,5 +1,6 @@
 package com.bateman.msu.hw4courtcounter
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import kotlin.collections.plusAssign
 import kotlin.inc
@@ -8,6 +9,12 @@ private const val TAG = "CourtCounterViewModel"
 
 
 class CourtCounterViewModel: ViewModel() {
+
+    init {
+
+        Log.d(TAG, "ViewModel instance created")
+
+    }
 
     var scoreTeamA = 0
     var scoreTeamB = 0

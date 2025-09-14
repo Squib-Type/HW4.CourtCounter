@@ -2,12 +2,16 @@ package com.bateman.msu.hw4courtcounter
 
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.TextView
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.bateman.msu.hw4courtcounter.databinding.ActivityMainBinding
 import kotlin.getValue
+
+
+private const val TAG = "MainActivity"
 
 class MainActivity : AppCompatActivity() {
 
@@ -20,6 +24,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        Log.d(TAG, "onCreate(Bundle) called")
+
+        displayForTeamA(courtCounterViewModel.scoreTeamA)
+        displayForTeamB(courtCounterViewModel.scoreTeamB)
+
     }
 
     /**
@@ -98,6 +108,7 @@ class MainActivity : AppCompatActivity() {
     /**
      * Displays the given score for Team A.
      */
+
     fun displayForTeamA(score: Int) {
         val scoreView = binding.teamAScore
         scoreView.text = score.toString()
